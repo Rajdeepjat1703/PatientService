@@ -21,6 +21,17 @@ public class Patient {
     @Column(unique = true)
     private String Email;
 
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    @NotNull
+    private String address;
+
     @NotNull
     private LocalDate dateOfBirth;
 
