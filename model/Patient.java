@@ -14,20 +14,12 @@ public class Patient {
     private UUID id;
 
     @NotNull
-    private String Name;
+    private String name;
 
     @NotNull
     @Email
     @Column(unique = true)
-    private String Email;
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
+    private String email;
 
     @NotNull
     private String address;
@@ -38,12 +30,20 @@ public class Patient {
     @NotNull
     private LocalDate registeredDate;
 
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
     public String getEmail() {
-        return Email;
+        return email;
     }
 
     public void setEmail(String email) {
-        Email = email;
+        this.email = email;
     }
 
     public UUID getId() {
@@ -55,11 +55,11 @@ public class Patient {
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
     public void setName(String name) {
-        Name = name;
+        this.name = name;
     }
 
     public LocalDate getDateOfBirth() {
@@ -77,5 +77,4 @@ public class Patient {
     public void setRegisteredDate(LocalDate registeredDate) {
         this.registeredDate = registeredDate;
     }
-
 }

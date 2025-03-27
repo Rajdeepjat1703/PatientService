@@ -28,7 +28,7 @@ public class PatientService {
     }
     public PatientResponseDTO createPatient(PatientRequestDTO patientRequestDTO)
     {
-        if(patientRepository.existemail(patientRequestDTO.getEmail()))
+        if(patientRepository.existsByEmail(patientRequestDTO.getEmail()))
         {
             throw new EmailAlreadyExistsException(
                     "A patient with this email " + "already exists"
@@ -62,6 +62,11 @@ public class PatientService {
 
         Patient updatedPatient = patientRepository.save(patient);
         return PatientMapper.toDTO(updatedPatient);
+    }
+    public void deletePatient(UUID id)
+    {
+        patientRepository.deleteById(id);
+
     }
 
 
